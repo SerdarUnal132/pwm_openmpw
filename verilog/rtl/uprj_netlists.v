@@ -21,8 +21,12 @@
     // Assume default net type to be wire because GL netlists don't have the wire definitions
     `default_nettype wire
     `include "gl/user_project_wrapper.v"
-    `include "gl/user_proj_example.v"
+    `include "gl/pwm_top.v"
 `else
-    `include "user_project_wrapper.v"
-    `include "user_proj_example.v"
+    `include "pwm_top.v"
+    `include "pwm.v"
+    `include "pwm_blink_mode.v"
+    `include "pwm_standard_mode.v"
+    `include "pwm_heartbeat_mode.v"
+    `include "pwm_find_smaller.v"
 `endif

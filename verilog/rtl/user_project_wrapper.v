@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2020 Efabless Corporation
+// SPDX-FileCopyrightText: 2022 Serdar Unal
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ module user_project_wrapper #(
 /* User project is instantiated  here   */
 /*--------------------------------------*/
 
-user_proj_example mprj (
+pwm_top mprj (
 `ifdef USE_POWER_PINS
 	.vccd1(vccd1),	// User area 1 1.8V power
 	.vssd1(vssd1),	// User area 1 digital ground

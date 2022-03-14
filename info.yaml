@@ -1,0 +1,19 @@
+
+--- 
+project: 
+  description: "Simple PWM module for trying OpenMPW"
+  foundry: "SkyWater"
+  git_url: "https://github.com/SerdarUnal132/pwm_openmpw.git"
+  organization: "TUBITAK BILGEM TUTEL"
+  organization_url: "https://tutel.bilgem.tubitak.gov.tr/"
+  owner: "Serdar Unal"
+  process: "SKY130"
+  project_name: "pwm_openmpw"
+  tags: 
+    - "Open MPW"
+    - "PWM"
+  category: "pulse wave modulators"
+  top_level_netlist: "verilog/gl/user_project_wrapper.v"
+  user_level_netlist: "verilog/gl/pwm_top.v"
+  version: "1.00"
+  cover_image: "docs/tutel-logo.png"

@@ -80,8 +80,25 @@ void main()
     // Flag start of the test
 	reg_mprj_datal = 0xAB600000;
 
-    reg_mprj_slave = 0x00002710;
-    if (reg_mprj_slave == 0x2B3D) {
-        reg_mprj_datal = 0xAB610000;
-    }
+    reg_mprj_slave = 0x00000003;
+    (reg_mprj_slave + 1) = 0x00000000;
+    (reg_mprj_slave + 2) = 0x00000000;
+    (reg_mprj_slave + 3) = 0x00000000;
+    (reg_mprj_slave + 4) = 0x00000000;
+    (reg_mprj_slave + 5) = 0x00000000;
+    (reg_mprj_slave + 6) = 0x00000000;
+    (reg_mprj_slave + 7) = 0x00000000;
+    (reg_mprj_slave + 8) = 0x00000000;
+    (reg_mprj_slave + 9) = 0x00000000;
+    (reg_mprj_slave + 10) = 0x00000000;
+    (reg_mprj_slave + 11) = 0x00000064;
+    (reg_mprj_slave + 12) = 0x00030958;
+    (reg_mprj_slave + 13) = 0x00030D40;
+    (reg_mprj_slave + 14) = 0x00000001;
+    (reg_mprj_slave + 15) = 0x0000015E;
+    
+
+    //if (reg_mprj_slave == 0x2B3D) {
+    //    reg_mprj_datal = 0xAB610000;
+    //}
 }
