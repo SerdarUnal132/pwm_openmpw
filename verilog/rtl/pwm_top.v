@@ -79,6 +79,7 @@ pwm_top #(
     wire [NumPWM-1:0] cio_pwm;
     wire [NumPWM-1:0] ready;
     wire [NumPWM-1:0] pwm_select;
+    wire [NumPWM-1:0] valid_select;
 
     wire valid;
     wire [31:0] la_write;
@@ -97,14 +98,14 @@ pwm_top #(
 
     // LA
     assign la_data_out = {{(128-NumPWM){1'b0}}, cio_pwm};
-    // Assuming LA probes [63:32] are for controlling the count register  
-//    assign la_write = ~la_oenb[63:32] & ~{BITS{valid}};
-    // Assuming LA probes [65:64] are for controlling the count clk & reset  
-//    assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
-//    assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
     
     assign wbs_ack_o = | ready;
-    assign pwm_select = wbs_adr_i[7:0] / 16;
+    assign pwm_select = wbs_adr_i[7:6];
+
+    assign valid_select = (pwm_select == 0) ? 4'b0001 :
+                          ((pwm_select == 1) ? 4'b0010 :
+                          ((pwm_select == 2) ? 4'b0010 :
+                          ((pwm_select == 3) ? 4'b0010 : 4'b0000)));
      
     genvar i;
     for (i = 0; i < NumPWM; i = i+1) begin
@@ -114,7 +115,7 @@ pwm_top #(
             .clk_i     (wb_clk_i),
             .rst_ni    (!wb_rst_i),
             .ready_o   (ready[i]),
-            .valid_i   (valid && pwm_select[i]),
+            .valid_i   (valid && valid_select[i]),
             .rdata_o   (rdata[i]),
             .wdata_i   (wbs_dat_i),
             .we_i      (wbs_we_i),
