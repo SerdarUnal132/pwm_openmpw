@@ -104,8 +104,8 @@ pwm_top #(
 
     assign valid_select = (pwm_select == 0) ? 4'b0001 :
                           ((pwm_select == 1) ? 4'b0010 :
-                          ((pwm_select == 2) ? 4'b0010 :
-                          ((pwm_select == 3) ? 4'b0010 : 4'b0000)));
+                          ((pwm_select == 2) ? 4'b0100 :
+                          ((pwm_select == 3) ? 4'b1000 : 4'b0000)));
      
     genvar i;
     for (i = 0; i < NumPWM; i = i+1) begin
