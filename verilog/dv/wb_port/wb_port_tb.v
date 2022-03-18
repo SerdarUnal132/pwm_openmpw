@@ -17,6 +17,10 @@
 
 `timescale 1 ns / 1 ps
 
+`include "uprj_netlists.v"
+`include "caravel_netlists.v"
+`include "spiflash.v"
+
 module wb_port_tb;
 	reg clock;
 	reg RSTB;

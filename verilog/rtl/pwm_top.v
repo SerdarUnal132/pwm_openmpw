@@ -71,8 +71,6 @@ pwm_top #(
     // IRQ
     output [2:0] irq
 );
-    //wire clk;
-    //wire rst;
 
     wire [31:0] rdata [NumPWM-1:0]; 
     wire [31:0] wdata;
@@ -91,7 +89,7 @@ pwm_top #(
 
     // IO
     assign io_out = cio_pwm;
-    assign io_oeb = {(`MPRJ_IO_PADS-1){rst}};
+    assign io_oeb = {(`MPRJ_IO_PADS-1){1'b1}};
 
     // IRQ
     assign irq = 3'b000;	// Unused

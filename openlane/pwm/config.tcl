@@ -73,6 +73,7 @@ set ::env(FP_SIZING) absolute
 set ::env(DIE_AREA) "0 0 1600 700"
 set ::env(FP_CORE_UTIL) 35
 set ::env(DESIGN_IS_CORE) 0
+set ::env(FP_PDN_VPITCH) 100
 
 ##################################################################
 # Placement
@@ -90,7 +91,7 @@ set ::env(PL_RESIZER_SETUP_MAX_BUFFER_PERCENT) 30
 set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 70
 set ::env(PL_RESIZER_ALLOW_SETUP_VIOS) 1
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
-
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 350
 
 ##################################################################
 # CTS
@@ -129,7 +130,7 @@ set ::env(DIODE_INSERTION_STRATEGY) 3
 ##################################################################
 # Detailed Routing
 ##################################################################
-set ::env(DRT_OPT_ITERS) 35
+set ::env(DRT_OPT_ITERS) 45
 set ::env(ROUTING_CORES) 8
 set ::env(DETAILED_ROUTER) tritonroute
 
