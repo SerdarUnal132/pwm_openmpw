@@ -30,8 +30,10 @@ all:
 		-I /home/serdar/Desktop/pwm/pwm_openmpw/caravel/verilog/rtl \
 		-I /home/serdar/Desktop/pwm/pwm_openmpw/caravel/verilog \
 		-I ../ \
-		-I../../../verilog/rtl \
-		-I../../../verilog/gl \
+		-I ../../../mgmt_core_wrapper/verilog \
+		-I ../../../mgmt_core_wrapper/verilog/rtl \
+		-I ../../../verilog/rtl \
+		-I ../../../verilog/gl \
 		-I ../../../verilog wb_port_tb.v -o wb_port.vvp
 
 clean:

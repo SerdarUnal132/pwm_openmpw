@@ -1,6 +1,6 @@
 ###############################################################################
 # Created by write_sdc
-# Thu Mar 17 04:44:48 2022
+# Sat Mar 19 21:17:25 2022
 ###############################################################################
 current_design user_project_wrapper
 ###############################################################################
@@ -9,7 +9,6 @@ current_design user_project_wrapper
 create_clock -name wb_clk_i -period 38.0000 [get_ports {wb_clk_i}]
 set_clock_transition 0.1500 [get_clocks {wb_clk_i}]
 set_clock_uncertainty 0.2500 wb_clk_i
-set_propagated_clock [get_clocks {wb_clk_i}]
 set_input_delay 7.6000 -clock [get_clocks {wb_clk_i}] -add_delay [get_ports {analog_io[0]}]
 set_input_delay 7.6000 -clock [get_clocks {wb_clk_i}] -add_delay [get_ports {analog_io[10]}]
 set_input_delay 7.6000 -clock [get_clocks {wb_clk_i}] -add_delay [get_ports {analog_io[11]}]

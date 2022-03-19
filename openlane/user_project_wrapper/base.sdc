@@ -23,8 +23,8 @@ set_input_delay $input_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] $all_
 #set_input_delay 0.0 -clock [get_clocks $::env(CLOCK_PORT)] {resetn}
 set_output_delay $output_delay_value  -clock [get_clocks $::env(CLOCK_PORT)] [all_outputs]
 
-set_max_delay 3 -from [all_inputs] to *
-set_max_delay 3 -from * to [all_outputs]
+# set_max_delay 3 -from [all_inputs] -to *
+# set_max_delay 3 -from * -to [all_outputs]
 
 # TODO set this as parameter
 set_driving_cell -lib_cell $::env(SYNTH_DRIVING_CELL) -pin $::env(SYNTH_DRIVING_CELL_PIN) [all_inputs]

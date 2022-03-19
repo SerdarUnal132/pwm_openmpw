@@ -70,8 +70,8 @@ set ::env(SYNTH_MAX_FANOUT) 3
 # Floorplanning
 ##################################################################
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 1600 700"
-set ::env(FP_CORE_UTIL) 35
+set ::env(DIE_AREA) "0 0 2000 900"
+set ::env(FP_CORE_UTIL) 25
 set ::env(DESIGN_IS_CORE) 0
 set ::env(FP_PDN_VPITCH) 100
 
@@ -79,19 +79,21 @@ set ::env(FP_PDN_VPITCH) 100
 # Placement
 ##################################################################
 set ::env(PL_BASIC_PLACEMENT) 0
-set ::env(PL_TARGET_DENSITY) 0.30
+set ::env(PL_TARGET_DENSITY) 0.20
 set ::env(PL_TIME_DRIVEN) 0
 set ::env(PL_ROUTABILITY_DRIVEN) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 600
 set ::env(PL_MAX_DISPLACEMENT_Y) 400
-set ::env(CELL_PAD) 4
+set ::env(CELL_PAD) 8
 set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 1
 set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 1
+set ::env(PL_RESIZER_BUFFER_INPUT_PORTS) 1
+set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 1
 set ::env(PL_RESIZER_SETUP_MAX_BUFFER_PERCENT) 30
 set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 70
 set ::env(PL_RESIZER_ALLOW_SETUP_VIOS) 1
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
-set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 300
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 275
 
 ##################################################################
 # CTS
@@ -100,7 +102,8 @@ set ::env(CTS_TARGET_SKEW) 150
 set ::env(CTS_TOLERANCE) 25
 set ::env(CTS_CLK_BUFFER_LIST) "sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8"
 set ::env(CTS_SINK_CLUSTERING_SIZE) "16"
-set ::env(CLOCK_BUFFER_FANOUT) "8"
+set ::env(CLOCK_BUFFER_FANOUT) "6"
+set ::env(CTS_CLK_MAX_WIRE_LENGTH) 275
 
 ##################################################################
 # Optimization
@@ -110,7 +113,8 @@ set ::env(CLOCK_BUFFER_FANOUT) "8"
 ##################################################################
 # Global Routing
 ##################################################################
-set ::env(GLB_RT_ANT_ITERS) 10
+set ::env(GLB_RT_ANT_ITERS) 15
+set ::env(GLB_RT_MAX_DIODE_INS_ITERS) 15
 set ::env(GLOBAL_ROUTER) fastroute
 set ::env(GLB_RESIZER_TIMING_OPTIMIZATIONS) 1
 set ::env(GLB_RESIZER_ALLOW_SETUP_VIOS) 1
