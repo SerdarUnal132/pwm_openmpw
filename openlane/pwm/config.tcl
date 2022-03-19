@@ -91,7 +91,7 @@ set ::env(PL_RESIZER_SETUP_MAX_BUFFER_PERCENT) 30
 set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 70
 set ::env(PL_RESIZER_ALLOW_SETUP_VIOS) 1
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
-set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 350
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 300
 
 ##################################################################
 # CTS

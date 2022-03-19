@@ -32,6 +32,9 @@ set ::env(DESIGN_NAME) user_project_wrapper
 
 # User Configurations
 
+set ::env(BASE_SDC_FILE) {/home/serdar/Desktop/pwm/pwm_openmpw/openlane/user_project_wrapper/base.sdc}
+
+
 ## Source Verilog Files
 set ::env(VERILOG_FILES) "\
 	$::env(CARAVEL_ROOT)/verilog/rtl/defines.v \
@@ -73,13 +76,15 @@ set ::env(FP_PDN_ENABLE_MACROS_GRID) "1"
 set ::env(VDD_NETS) "vccd1 vccd2 vdda1 vdda2"
 set ::env(GND_NETS) "vssd1 vssd2 vssa1 vssa2"
 
-set ::env(PL_RANDOM_GLB_PLACEMENT) 1
+set ::env(PL_RANDOM_GLB_PLACEMENT) 0
 
-set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 1
-set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 1
+set ::env(PL_RESIZER_DESIGN_OPTIMIZATIONS) 0
+set ::env(PL_RESIZER_TIMING_OPTIMIZATIONS) 0
 set ::env(PL_RESIZER_BUFFER_INPUT_PORTS) 1
 set ::env(PL_RESIZER_BUFFER_OUTPUT_PORTS) 1
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 300
 
+set ::env(DETAILED_ROUTER) tritonroute
 set ::env(RUN_ROUTING_DETAILED) 1
 set ::env(DRT_OPT_ITERS) 10
 
