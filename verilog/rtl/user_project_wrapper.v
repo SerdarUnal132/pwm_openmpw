@@ -28,6 +28,7 @@
  *
  *-------------------------------------------------------------
  */
+ `define MPRJ_IO_PADS 38
 
 module user_project_wrapper #(
     parameter BITS = 32

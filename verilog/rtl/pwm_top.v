@@ -34,7 +34,7 @@
  *
  *-------------------------------------------------------------
  */
-//`define MPRJ_IO_PADS 38
+`define MPRJ_IO_PADS 38
 
 module 
 pwm_top #(
@@ -86,6 +86,7 @@ pwm_top #(
     wire rst;
 
     // WB MI A
+    // assign valid = wbs_stb_i; 
     assign valid = wbs_cyc_i && wbs_stb_i; 
     assign wbs_dat_o = rdata[pwm_select];
     assign wdata = wbs_dat_i;

@@ -1,3 +1,12 @@
+
+#define	PWM_IDLE 0
+#define	PWM_STANDARD 1
+#define	PWM_BLINK 2
+#define	PWM_HEARTBEAT 3
+
+#define	PWM_INVERT_DISABLE 0
+#define	PWM_INVERT_ENABLE 1
+
 // PWM0
 #define reg_pwm0_state_select                  (*(volatile uint32_t*)0x30000000)
 #define reg_pwm0_inversion                     (*(volatile uint32_t*)0x30000004)

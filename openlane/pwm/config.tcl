@@ -95,7 +95,7 @@ set ::env(PL_RESIZER_SETUP_MAX_BUFFER_PERCENT) 30
 set ::env(PL_RESIZER_HOLD_MAX_BUFFER_PERCENT) 70
 set ::env(PL_RESIZER_ALLOW_SETUP_VIOS) 1
 set ::env(PL_RESIZER_HOLD_SLACK_MARGIN) 0.2
-set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 275
+set ::env(PL_RESIZER_MAX_WIRE_LENGTH) 125
 
 ##################################################################
 # CTS
@@ -105,7 +105,7 @@ set ::env(CTS_TOLERANCE) 25
 set ::env(CTS_CLK_BUFFER_LIST) "sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8"
 set ::env(CTS_SINK_CLUSTERING_SIZE) "16"
 set ::env(CLOCK_BUFFER_FANOUT) "6"
-set ::env(CTS_CLK_MAX_WIRE_LENGTH) 275
+set ::env(CTS_CLK_MAX_WIRE_LENGTH) 300
 
 ##################################################################
 # Optimization

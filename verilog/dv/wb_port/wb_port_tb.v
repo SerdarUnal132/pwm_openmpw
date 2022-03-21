@@ -16,10 +16,10 @@
 `default_nettype none
 
 `timescale 1 ns / 1 ps
-
+`define MPRJ_IO_PADS 38
 `include "uprj_netlists.v"
-// `include "caravel_netlists.v"
-// `include "spiflash.v"
+`include "caravel_netlists.v"
+`include "../../../mgmt_core_wrapper/verilog/dv/vip/spiflash.v"
 
 module wb_port_tb;
 	reg clock;
@@ -41,8 +41,8 @@ module wb_port_tb;
 	// simulation.  Normally this would be a slow clock and the digital PLL
 	// would be the fast clock.
 
-	// always #12.5 clock <= (clock === 1'b0);
-	always #12.5 clock <= ~clock;
+	always #12.5 clock <= (clock === 1'b0);
+	// always #12.5 clock <= ~clock;
 
 	initial begin
 		clock = 0;
@@ -53,7 +53,7 @@ module wb_port_tb;
 		$dumpvars(0, wb_port_tb);
 
 		// Repeat cycles of 1000 clock edges as needed to complete testbench
-		repeat (70) begin
+		repeat (250) begin
 			repeat (1000) @(posedge clock);
 			// $display("+1000 cycles");
 		end
