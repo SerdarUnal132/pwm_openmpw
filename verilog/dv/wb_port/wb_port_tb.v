@@ -18,8 +18,8 @@
 `timescale 1 ns / 1 ps
 
 `include "uprj_netlists.v"
-`include "caravel_netlists.v"
-`include "spiflash.v"
+// `include "caravel_netlists.v"
+// `include "spiflash.v"
 
 module wb_port_tb;
 	reg clock;
@@ -41,7 +41,8 @@ module wb_port_tb;
 	// simulation.  Normally this would be a slow clock and the digital PLL
 	// would be the fast clock.
 
-	always #12.5 clock <= (clock === 1'b0);
+	// always #12.5 clock <= (clock === 1'b0);
+	always #12.5 clock <= ~clock;
 
 	initial begin
 		clock = 0;

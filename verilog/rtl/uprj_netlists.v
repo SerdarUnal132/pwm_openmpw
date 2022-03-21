@@ -14,7 +14,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 // Include caravel global defines for the number of the user project IO pads 
-`include "defines.v"
+`include "../../../caravel/verilog/rtl/defines.v"
 `define USE_POWER_PINS
 
 `ifdef GL
@@ -23,10 +23,10 @@
     `include "gl/user_project_wrapper.v"
     `include "gl/pwm_top.v"
 `else
-    `include "pwm_top.v"
-    `include "pwm.v"
-    `include "pwm_blink_mode.v"
-    `include "pwm_standard_mode.v"
-    `include "pwm_heartbeat_mode.v"
-    `include "pwm_find_smaller.v"
+ //   `include "../../rtl/pwm_top.v"
+ //   `include "../../rtl/pwm.v"
+ //   `include "../../rtl/pwm_blink_mode.v"
+ //   `include "../../rtl/pwm_standard_mode.v"
+ //   `include "../../rtl/pwm_heartbeat_mode.v"
+ //   `include "../../rtl/pwm_find_smaller.v"
 `endif

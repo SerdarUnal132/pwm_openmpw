@@ -1,5 +1,10 @@
 # Caravel user project includes
 -v $(USER_PROJECT_VERILOG)/rtl/user_project_wrapper.v	     
--v $(USER_PROJECT_VERILOG)/rtl/user_proj_example.v
+-v $(USER_PROJECT_VERILOG)/rtl/pwm_top.v	    
+-v $(USER_PROJECT_VERILOG)/rtl/pwm.v	    
+-v $(USER_PROJECT_VERILOG)/rtl/pwm_blink_mode.v	    
+-v $(USER_PROJECT_VERILOG)/rtl/pwm_standard_mode.v	    
+-v $(USER_PROJECT_VERILOG)/rtl/pwm_heartbeat_mode.v	    
+-v $(USER_PROJECT_VERILOG)/rtl/pwm_find_smaller.v
 
  

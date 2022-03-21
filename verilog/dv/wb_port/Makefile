@@ -23,8 +23,15 @@ BLOCKS := $(shell basename $(PWDD))
 
 CONFIG = caravel_user_project
 
-all:
-	iverilog -g2005-sv -DWFDUMP -DFUNCTIONAL -DSIM -DGL \
+export MCW_ROOT=/home/serdar/Desktop/pwm/pwm_openmpw/mgmt_core_wrapper
+include $(MCW_ROOT)/verilog/dv/make/env.makefile
+include $(MCW_ROOT)/verilog/dv/make/var.makefile
+include $(MCW_ROOT)/verilog/dv/make/cpu.makefile
+include $(MCW_ROOT)/verilog/dv/make/sim.makefile
+
+
+#all:
+#	iverilog -g2005-sv -DWFDUMP -DFUNCTIONAL -DSIM -DGL \
 		-I /home/serdar/pdks/sky130A \
 		-I /home/serdar/Desktop/pwm/pwm_openmpw/caravel/verilog/dv/caravel \
 		-I /home/serdar/Desktop/pwm/pwm_openmpw/caravel/verilog/rtl \
@@ -36,5 +43,5 @@ all:
 		-I ../../../verilog/gl \
 		-I ../../../verilog wb_port_tb.v -o wb_port.vvp
 
-clean:
-	rm -f *.elf *.hex *.bin *.vvp *.vcd *.log
+#clean:
+#	rm -f *.elf *.hex *.bin *.vvp *.vcd *.log

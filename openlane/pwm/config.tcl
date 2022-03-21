@@ -59,6 +59,8 @@ set ::env(GND_NETS) [list {vssd1}]
 set ::env(RUN_ROUTING_DETAILED) 1
 # If you're going to use multiple power domains, then disable cvc run.
 set ::env(RUN_CVC) 1
+set ::env(LEC_ENABLE) 0
+
 
 ##################################################################
 # Synthesis
@@ -70,8 +72,8 @@ set ::env(SYNTH_MAX_FANOUT) 3
 # Floorplanning
 ##################################################################
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2000 900"
-set ::env(FP_CORE_UTIL) 25
+set ::env(DIE_AREA) "0 0 2300 1000"
+set ::env(FP_CORE_UTIL) 18
 set ::env(DESIGN_IS_CORE) 0
 set ::env(FP_PDN_VPITCH) 100
 
@@ -79,7 +81,7 @@ set ::env(FP_PDN_VPITCH) 100
 # Placement
 ##################################################################
 set ::env(PL_BASIC_PLACEMENT) 0
-set ::env(PL_TARGET_DENSITY) 0.20
+set ::env(PL_TARGET_DENSITY) 0.14
 set ::env(PL_TIME_DRIVEN) 0
 set ::env(PL_ROUTABILITY_DRIVEN) 1
 set ::env(PL_MAX_DISPLACEMENT_X) 600

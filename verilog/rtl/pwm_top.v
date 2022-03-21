@@ -82,6 +82,9 @@ pwm_top #(
     wire valid;
     wire [31:0] la_write;
 
+    wire clk;
+    wire rst;
+
     // WB MI A
     assign valid = wbs_cyc_i && wbs_stb_i; 
     assign wbs_dat_o = rdata[pwm_select];
@@ -96,6 +99,9 @@ pwm_top #(
 
     // LA
     assign la_data_out = {{(128-NumPWM){1'b0}}, cio_pwm};
+    // Assuming LA probes [65:64] are for controlling the count clk & reset  
+    assign clk = (~la_oenb[64]) ? la_data_in[64]: wb_clk_i;
+    assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
     
     assign wbs_ack_o = | ready;
     assign pwm_select = wbs_adr_i[7:6];
@@ -110,8 +116,8 @@ pwm_top #(
         pwm #(
             .BITS      (BITS)
         ) pwm_insts (
-            .clk_i     (wb_clk_i),
-            .rst_ni    (!wb_rst_i),
+            .clk_i     (clk),
+            .rst_ni    (!rst),
             .ready_o   (ready[i]),
             .valid_i   (valid && valid_select[i]),
             .rdata_o   (rdata[i]),

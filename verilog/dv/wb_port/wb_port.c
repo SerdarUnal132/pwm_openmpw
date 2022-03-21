@@ -18,6 +18,7 @@
 // This include is relative to $CARAVEL_PATH (see Makefile)
 #include <defs.h>
 #include <stub.c>
+#include "../register_map.h"
 
 /*
 	Wishbone Test:
@@ -76,26 +77,30 @@ void main()
     while (reg_mprj_xfer == 1);
 
 	reg_la2_oenb = reg_la2_iena = 0x00000000;    // [95:64]
+    reg_la0_data = 0x0000000100000000;
+    reg_la0_data = 0x0000000000000000;
 
     // Flag start of the test
 	reg_mprj_datal = 0xAB600000;
 
-    reg_mprj_slave = 0x00000003;
-    (reg_mprj_slave + 1) = 0x00000000;
-    (reg_mprj_slave + 2) = 0x00000000;
-    (reg_mprj_slave + 3) = 0x00000000;
-    (reg_mprj_slave + 4) = 0x00000000;
-    (reg_mprj_slave + 5) = 0x00000000;
-    (reg_mprj_slave + 6) = 0x00000000;
-    (reg_mprj_slave + 7) = 0x00000000;
-    (reg_mprj_slave + 8) = 0x00000000;
-    (reg_mprj_slave + 9) = 0x00000000;
-    (reg_mprj_slave + 10) = 0x00000000;
-    (reg_mprj_slave + 11) = 0x00000064;
-    (reg_mprj_slave + 12) = 0x00030958;
-    (reg_mprj_slave + 13) = 0x00030D40;
-    (reg_mprj_slave + 14) = 0x00000001;
-    (reg_mprj_slave + 15) = 0x0000015E;
+    reg_mprj_slave = 0x2B3D;
+
+    reg_pwm0_state_select =                  0x00000003;
+    reg_pwm0_inversion =                     0x00000000;
+    reg_pwm0_threshold_counter_standard =    0x00000000;
+    reg_pwm0_period_counter_standard =       0x00000000;
+    reg_pwm0_step_standard =                 0x00000000;
+    reg_pwm0_threshold_counter_blink_1 =     0x00000000;
+    reg_pwm0_threshold_counter_blink_2 =     0x00000000;
+    reg_pwm0_period_counter_blink_1 =        0x00000000;
+    reg_pwm0_period_counter_blink_2 =        0x00000000;
+    reg_pwm0_step_blink =                    0x00000000;
+    reg_pwm0_switch_counter_blink =          0x00000000;
+    reg_pwm0_threshold_counter_heartbeat_1 = 0x00000064;
+    reg_pwm0_threshold_counter_heartbeat_2 = 0x00030958;
+    reg_pwm0_period_counter_heartbeat =      0x00030D40;
+    reg_pwm0_step_heartbeat =                0x00000001;
+    reg_pwm0_increment_step_heartbeat =      0x0000015E;
     
 
     //if (reg_mprj_slave == 0x2B3D) {
