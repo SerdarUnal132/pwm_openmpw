@@ -176,7 +176,7 @@ void main()
     reg_pwm3_threshold_counter_blink_2 =     0x00000000;
     reg_pwm3_period_counter_blink_1 =        0x00000000;
     reg_pwm3_period_counter_blink_2 =        0x00000000;
-    reg_pwm3_step_blink =                    0x00000000;
+    // reg_pwm3_step_blink =                    0x00000000;
     reg_pwm3_switch_counter_blink =          0x00000000;
     reg_pwm3_threshold_counter_heartbeat_1 = 0x00000064;
     reg_pwm3_threshold_counter_heartbeat_2 = 0x00030958;
