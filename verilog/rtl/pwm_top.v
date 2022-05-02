@@ -72,12 +72,12 @@ pwm_top #(
     output [2:0] irq
 );
 
-    wire [31:0] rdata [NumPWM-1:0]; 
-    wire [31:0] wdata;
-    wire [NumPWM-1:0] cio_pwm;
-    wire [NumPWM-1:0] ready;
-    wire [NumPWM-1:0] pwm_select;
-    wire [NumPWM-1:0] valid_select;
+    wire [31:0]               rdata [NumPWM-1:0]; 
+    wire [31:0]               wdata;
+    wire [NumPWM-1:0]         cio_pwm;
+    wire [NumPWM-1:0]         ready;
+    wire [$clog2(NumPWM)-1:0] pwm_select;
+    wire [NumPWM-1:0]         valid_select;
 
     wire valid;
     wire [31:0] la_write;
@@ -92,8 +92,11 @@ pwm_top #(
     assign wdata = wbs_dat_i;
 
     // IO
-    assign io_out = cio_pwm;
-    assign io_oeb = {(`MPRJ_IO_PADS-1){1'b1}};
+    assign io_out[`MPRJ_IO_PADS-1:22] = 0;
+    assign io_out[21:20]              = pwm_select;
+    assign io_out[19:16]              = cio_pwm;
+    assign io_out[15:0]               = 0;
+    assign io_oeb                     = {(`MPRJ_IO_PADS-1){1'b1}};
 
     // IRQ
     assign irq = 3'b000;	// Unused
@@ -105,7 +108,7 @@ pwm_top #(
     assign rst = (~la_oenb[65]) ? la_data_in[65]: wb_rst_i;
     
     assign wbs_ack_o = | ready;
-    assign pwm_select = wbs_adr_i[7:6];
+    assign pwm_select = (wbs_adr_i[7:6] === 2'bX) ? 2'b0 : wbs_adr_i[7:6];
 
     assign valid_select = (pwm_select == 0) ? 4'b0001 :
                           ((pwm_select == 1) ? 4'b0010 :

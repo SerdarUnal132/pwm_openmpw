@@ -46,7 +46,7 @@ void main()
 	/* Set up the housekeeping SPI to be connected internally so	*/
 	/* that external pin changes don't affect it.			*/
 
-    reg_spi_enable = 1;
+    // reg_spi_enable = 1;
 	// reg_spimaster_config = 0xa002;	// Enable, prescaler = 2,
                                         // connect to housekeeping SPI
 
@@ -64,12 +64,12 @@ void main()
     reg_mprj_io_24 = GPIO_MODE_MGMT_STD_OUTPUT;
     reg_mprj_io_23 = GPIO_MODE_MGMT_STD_OUTPUT;
     reg_mprj_io_22 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_21 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_20 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_19 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_18 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_17 = GPIO_MODE_MGMT_STD_OUTPUT;
-    reg_mprj_io_16 = GPIO_MODE_MGMT_STD_OUTPUT;
+    reg_mprj_io_21 = GPIO_MODE_USER_STD_OUT_MONITORED;
+    reg_mprj_io_20 = GPIO_MODE_USER_STD_OUT_MONITORED;
+    reg_mprj_io_19 = GPIO_MODE_USER_STD_OUT_MONITORED;
+    reg_mprj_io_18 = GPIO_MODE_USER_STD_OUT_MONITORED;
+    reg_mprj_io_17 = GPIO_MODE_USER_STD_OUT_MONITORED;
+    reg_mprj_io_16 = GPIO_MODE_USER_STD_OUT_MONITORED;
 
     reg_mprj_io_15 = GPIO_MODE_USER_STD_OUT_MONITORED;
     reg_mprj_io_14 = GPIO_MODE_USER_STD_OUT_MONITORED;
@@ -185,5 +185,7 @@ void main()
     reg_pwm3_increment_step_heartbeat =      0x0000015E;
     
     //reg_mprj_datal = 0xAB610000;
-    
+    while (1) {
+        reg_pwm3_inversion =                 PWM_INVERT_DISABLE;
+    };
 }
