@@ -17,9 +17,9 @@
 
 `timescale 1 ns / 1 ps
 `define MPRJ_IO_PADS 38
-//`include "uprj_netlists.v"
-`include "../../../caravel/verilog/rtl/caravel_netlists.v"
-`include "../../../mgmt_core_wrapper/verilog/dv/vip/spiflash.v" // uncomment if RTL, comment if GL
+// `include "uprj_netlists.v"
+// `include "../../../caravel/verilog/rtl/caravel_netlists.v"
+// `include "../../../mgmt_core_wrapper/verilog/dv/vip/spiflash.v" // uncomment if RTL, comment if GL
 
 module wb_port_tb;
 	reg clock;
