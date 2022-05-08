@@ -72,7 +72,7 @@ set ::env(SYNTH_MAX_FANOUT) 3
 # Floorplanning
 ##################################################################
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2400 1000"
+set ::env(DIE_AREA) "0 0 2500 1200"
 set ::env(FP_CORE_UTIL) 18
 set ::env(DESIGN_IS_CORE) 0
 set ::env(FP_PDN_VPITCH) 100
