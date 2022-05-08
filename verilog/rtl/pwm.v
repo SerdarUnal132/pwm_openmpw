@@ -78,7 +78,6 @@ module pwm #(
   reg                             cio_pwm_o_reg_before_inversion;
   
   // Register interface
-  wire [RegAw-1:0] addr_o;
   reg  [RegDw-1:0] rdata_q;
   reg              ready_q;
   

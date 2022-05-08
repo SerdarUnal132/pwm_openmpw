@@ -184,8 +184,10 @@ void main()
     reg_pwm3_step_heartbeat =                0x00000001;
     reg_pwm3_increment_step_heartbeat =      0x0000015E;
     
+    
     //reg_mprj_datal = 0xAB610000;
-    while (1) {
+    for (int i = 1; i < 1001; i++) {
+        reg_pwm2_inversion =                 PWM_INVERT_DISABLE;
         reg_pwm3_inversion =                 PWM_INVERT_DISABLE;
     };
 }

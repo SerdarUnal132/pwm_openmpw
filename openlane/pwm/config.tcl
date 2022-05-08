@@ -72,10 +72,17 @@ set ::env(SYNTH_MAX_FANOUT) 3
 # Floorplanning
 ##################################################################
 set ::env(FP_SIZING) absolute
-set ::env(DIE_AREA) "0 0 2300 1000"
+set ::env(DIE_AREA) "0 0 2200 1000"
 set ::env(FP_CORE_UTIL) 18
 set ::env(DESIGN_IS_CORE) 0
 set ::env(FP_PDN_VPITCH) 100
+# decrease li density, increase li clear area density, by using ef decap cell
+set ::env(DECAP_CELL) "\
+	sky130_fd_sc_hd__decap_3 \
+	sky130_fd_sc_hd__decap_4 \
+	sky130_fd_sc_hd__decap_6 \
+	sky130_fd_sc_hd__decap_8 \
+	sky130_fd_sc_hd__decap_12" 
 
 ##################################################################
 # Placement
