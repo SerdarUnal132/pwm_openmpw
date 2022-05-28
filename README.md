@@ -30,3 +30,4 @@ The diagram of a PWM module can be seen below.
 ![alt text](https://github.com/SerdarUnal132/pwm_openmpw/blob/main/docs/diagram.png?raw=true)
 
 The project was simulated at the RTL stage with the Caravel. It is DRC & LVS clean. There are no setup, hold, slew, max capacitance, max fanout violations at the typical case. The hardened macro has an area of 2.3 um x 1 um. The area was increased substantially to allow routability.
+
